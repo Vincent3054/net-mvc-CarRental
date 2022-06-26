@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "預約成功";
+}
+
+@*標題*@
+<div class="page-header">
+    <h1>預約成功</h1>
+</div>
+@*顯示註冊結果訊息*@
+<div class="alert alert-success">
+    @TempData["RentalCarResult"]
+</div>
+<button type="button" style="text-align:center" class="btn btn-primary" onclick="javascript:location.href='/Members/Login'">繼續租車</button>
+
+
+

@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - 我的 ASP.NET 應用程式</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            @*<div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>*@
+            <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light navbar-dark bg-dark">
+                <div class="container-fluid" style="margin-left:10%">
+                    <a class="navbar-brand" href="#"><b>心安租車</b></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page">您好，@(User.Identity.Name)</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/Home/Index">首頁</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/Home/Contact">車種介紹</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/Home/About">聯絡我們</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/Members/ChangePassword">變更密碼</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/Members/Logout">登出</a>
+                                </li>
+                            }
+                            @*若無使用者登入，則列出兩個連結*@
+                            else
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/Members/Register">註冊</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/Members/Login">登入</a>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            @*<p>&copy; @DateTime.Now.Year - 我的 ASP.NET 應用程式</p>*@
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+@*<div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav">
+        if (User.Identity.IsAuthenticated)
+        {
+            <li style="color:white;padding:15px;">您好，@(User.Identity.Name)</li>
+            <li>@Html.ActionLink("首頁", "Index", "Home")</li>
+            <li>@Html.ActionLink("車種介紹", "Contact", "Home")</li>
+            <li>@Html.ActionLink("聯絡我們", "About", "Home")</li>
+            <li>@Html.ActionLink("變更密碼", "ChangePassword", "Members")</li>
+            <li>@Html.ActionLink("登出", "Logout", "Members")</li>
+        }
+        else
+        {
+            <li>@Html.ActionLink("註冊", "Register", "Members")</li>
+            <li>@Html.ActionLink("登入", "Login", "Members")</li>
+        }
+    </ul>
+</div>*@

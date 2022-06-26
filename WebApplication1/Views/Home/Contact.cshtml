@@ -1,0 +1,600 @@
+﻿@model WebApplication1.ViewModels.ContactiewModelViewModel
+@{
+    ViewBag.Title = "車種介紹";
+}
+<style>
+    /*.card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+        word-wrap: break-word;
+        background-color: #fff;
+        background-clip: border-box;
+        border: 1px solid rgba(0,0,0,.125);
+        border-radius: 0.25rem;
+    }
+
+    .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+    }
+
+    .card-img, .card-img-top {
+        border-top-left-radius: calc(0.25rem - 1px);
+        border-top-right-radius: calc(0.25rem - 1px);
+    }
+
+    .card-body {
+        flex: 1 1 auto;
+        padding: 1rem 1rem;
+    }
+
+    .card-title {
+        margin-bottom: 0.5rem;
+    }
+
+    .btn-primary {
+        color: #fff;
+        background-color: #0d6efd;
+        border-color: #0d6efd;
+    }
+
+    .row {
+        --bs-gutter-x: 1.5rem;
+        --bs-gutter-y: 0;
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: calc(var(--bs-gutter-y) * -1);
+        margin-right: calc(var(--bs-gutter-x)/ -2);
+        margin-left: calc(var(--bs-gutter-x)/ -2);
+    }
+
+    .g-4, .gx-4 {
+        --bs-gutter-x: 1.5rem;
+    }
+
+    .col {
+        flex: 1 0 0%;
+    }
+
+    @@media (min-width: 768px) .row-cols-md-2 > * {
+        flex: 0 0 auto;
+        width: 50%;
+    }
+
+    li {
+        font-size: 12pt;
+    }
+
+    .modal.show .modal-dialog {
+        transform: none;
+    }
+    .modal.fade .modal-dialog {
+        transition: transform .3s ease-out;
+        transform: translate(0,-50px);
+    }
+    @@media (min-width: 576px) .modal-dialog {
+            max-width: 500px;
+            margin: 1.75rem auto;
+     }
+    .modal-dialog {
+        position: relative;
+        width: auto;
+        margin: 0.5rem;
+        pointer-events: none;
+    }
+    .modal-content {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        pointer-events: auto;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid rgba(0,0,0,.2);
+        border-radius: 0.3rem;
+        outline: 0;
+    }
+    .modal-header {
+        display: flex;
+        flex-shrink: 0;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem 1rem;
+        border-bottom: 1px solid #dee2e6;
+        border-top-left-radius: calc(0.3rem - 1px);
+        border-top-right-radius: calc(0.3rem - 1px);
+    }
+        .modal-title {
+            margin-bottom: 0;
+            line-height: 1.5;
+        }
+        .modal-header .btn-close {
+            padding: 0.5rem 0.5rem;
+            margin: -0.5rem -0.5rem -0.5rem auto;
+    }
+    .modal-body {
+        position: relative;
+        flex: 1 1 auto;
+        padding: 1rem;
+    }
+    .modal-footer {
+        display: flex;
+        flex-wrap: wrap;
+        flex-shrink: 0;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 0.75rem;
+        border-top: 1px solid #dee2e6;
+        border-bottom-right-radius: calc(0.3rem - 1px);
+        border-bottom-left-radius: calc(0.3rem - 1px);
+    }
+        [type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
+            cursor: pointer;
+        }
+        .btn-secondary {
+            color: #fff;
+            background-color: #6c757d;
+            border-color: #6c757d;
+        }
+        .btn-primary {
+            color: #fff;
+            background-color: #0d6efd;
+            border-color: #0d6efd;
+        }*/
+
+</style>
+
+<h1><b style="font-size:36pt">車種介紹</b></h1>
+<div class="row row-cols-1 row-cols-lg-2 row-cols-xl-3">
+    <div class="col">
+        <div class="card" style="width: 25rem;">
+            <img src="../Upload/img/ALTIS.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h3 class="card-title"><b>ALTIS</b></h3>
+                <h3 class="card-title" style='text-align:right'>NT$ 3,000元起/日</h3>
+                <p class="card-text">
+                    <ul style='list-style-position:inside;'>
+                        <li>排氣量：1800cc</li>
+                        <li>乘客數：5人</li>
+                        <li>駕駛種類：自排</li>
+                        <li>容納空間參考：2大行李+2小行李</li>
+                        <li>車款配備：</li>
+                        ABS防煞車鎖死系統、雙前座安全氣囊
+                    </ul>
+                </p>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" style="width:100%;margin-bottom:10px;">
+                    我要預約
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card " style="width: 25rem;">
+            <img src="../Upload/img/VIOS.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h3 class="card-title"><b>VIOS</b></h3>
+                <h3 class="card-title" style='text-align:right'>NT$ 2,400元起/日</h3>
+                <p class="card-text">
+                    <ul style='list-style-position:inside;'>
+                        <li>排氣量：1500cc</li>
+                        <li>乘客數：5人</li>
+                        <li>駕駛種類：自排</li>
+                        <li>容納空間參考：1大行李+2小行李</li>
+                        <li>車款配備：</li>
+                        雙前座正面安全氣囊、ABS防煞車鎖死系統
+                    </ul>
+                </p>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModa2" style="width:100%;margin-bottom:10px;">
+                    我要預約
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card" style="width: 25rem;">
+            <img src="../Upload/img/YARIS.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h3 class="card-title"><b>YARIS</b></h3>
+                <h3 class="card-title" style='text-align:right'>NT$ 2,500元起/日</h3>
+                <p class="card-text">
+                    <ul style='list-style-position:inside;'>
+                        <li>排氣量：1500cc</li>
+                        <li>乘客數：5人</li>
+                        <li>駕駛種類：自排</li>
+                        <li>容納空間參考：1大行李+2小行李</li>
+                        <li>車款配備：</li>
+                        雙前座正面安全氣囊、ABS防煞車鎖死系統。
+                    </ul>
+                </p>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModa3" style="width:100%;margin-bottom:10px;">
+                    我要預約
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row row-cols-1 row-cols-lg-2 row-cols-xl-3" style="margin-top:30px">
+    <div class="col">
+        <div class="card" style="width: 25rem;">
+            <img src="../Upload/img/ALTISSafety.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h3 class="card-title"><b>ALTIS Safety+</b></h3>
+                <h3 class="card-title" style='text-align:right'>NT$ 3,100元起/日</h3>
+                <p class="card-text">
+                    <ul style='list-style-position:inside;'>
+                        <li>排氣量：1798cc</li>
+                        <li>乘客數：5人</li>
+                        <li>駕駛種類：自排</li>i>
+                        <li>容納空間參考：2大行李+2小行李</li>
+                        <li>車款配備：</li>
+                        環景影像、盲區偵測、行車紀錄器、GPS導航、前座安全氣囊、 ACC全速域主動式安全輔助
+                    </ul>
+                </p>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModa4" style="width:100%;margin-bottom:10px;">
+                    我要預約
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card" style="width: 25rem;">
+            <img src="../Upload/img/COROLLA CROSS.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h3 class="card-title"><b>COROLLA CROSS</b></h3>
+                <h3 class="card-title" style='text-align:right'>NT$ 3,500元起/日</h3>
+                <p class="card-text">
+                    <ul style='list-style-position:inside;'>
+                        <li>排氣量：1798cc</li>
+                        <li>乘客數：5人</li>
+                        <li>駕駛種類：自排</li>
+                        <li>容納空間參考：3大行李+2小行李</li>
+                        <li>車款配備：</li>
+                        VSC動態穩定、TRC循跡系統、倒車雷達、主動式智慧定速系統。
+                    </ul>
+                </p>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModa5" style="width:100%;margin-bottom:10px;">
+                    我要預約
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card" style="width: 25rem;">
+            <img src="../Upload/img/BZ4X.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h3 class="card-title"><b>bZ4X</b></h3>
+                <h3 class="card-title" style='text-align:right'>NT$ 8,800元起/日</h3>
+                <p class="card-text">
+                    <ul style='list-style-position:inside;'>
+                        <li>排氣量：0cc</li>
+                        <li>乘客數：5人</li>
+                        <li>駕駛種類：自排</li>
+                        <li>容納空間參考：3大行李+2小行李</li>
+                        <li>車款配備：</li>
+                        全車系首創的7吋置頂式儀表板、足踢式感應尾門、ACC全速域主動式 安全輔助。
+                    </ul>
+                </p>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModa6" style="width:100%;margin-bottom:10px;">
+                    我要預約
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">預約資訊</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form method="post" action="/Home/RentalCar">
+                <div class="modal-body">
+                    <img src="../Upload/img/ALTIS.png" class="card-img-top" alt="...">
+                    <div class="row g-2 align-items-center" style="margin-left:20px;margin-bottom:20px">
+                        <div class="col-2">
+                            <label class="form-label">車型</label>
+                        </div>
+                        <div class="col-auto" style="width:80%">
+                            <input type="text" class="form-control" id="CarName" name="CarName" placeholder="Disabled input" value="ALTIS">
+                        </div>
+                    </div>
+                    <div class="row g-2 align-items-center" style="margin-left:20px;margin-bottom:20px">
+                        <div class="col-2">
+                            <label for="exampleInputEmail1" class="form-label">姓名</label>
+                        </div>
+                        <div class="col-auto" style="width:80%">
+                            <input type="text" class="form-control" id="Name" name="Name" placeholder="Disabled input" value="@Model.Name">
+                        </div>
+                    </div>
+                    <div class="row g-2 align-items-center" style="margin-left:20px;margin-bottom:20px">
+                        <div class="col-2">
+                            <label class="form-label">信箱</label>
+                        </div>
+                        <div class="col-auto" style="width:80%">
+                            <input type="text" class="form-control" id="Email" name="Email" placeholder="Disabled input" value="@Model.Email" />
+                        </div>
+                    </div>
+                    <div class="row g-2 align-items-center" style="margin-left:20px;margin-bottom:20px">
+                        <div class="col-2">
+                            <label class="form-label">地區</label>
+                        </div>
+                        <div class="col-auto" style="width:80%">
+                            <input type="text" class="form-control" id="Location" name="Location" placeholder="Disabled input" value="@Model.Location">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
+                    <button type="submit" class="btn btn-primary">送出</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Moda2 -->
+<div class="modal fade" id="exampleModa2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">預約資訊</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form method="post" action="/Home/RentalCar">
+                <div class="modal-body">
+                    <img src="../Upload/img/VIOS.jpg" class="card-img-top" alt="...">
+                    <div class="row g-2 align-items-center" style="margin-left:20px;margin-bottom:20px">
+                        <div class="col-2">
+                            <label class="form-label">車型</label>
+                        </div>
+                        <div class="col-auto" style="width:80%">
+                            <input type="text" class="form-control" id="CarName" name="CarName" placeholder="Disabled input" value="VIOS">
+                        </div>
+                    </div>
+                    <div class="row g-2 align-items-center" style="margin-left:20px;margin-bottom:20px">
+                        <div class="col-2">
+                            <label for="exampleInputEmail1" class="form-label">姓名</label>
+                        </div>
+                        <div class="col-auto" style="width:80%">
+                            <input type="text" class="form-control" id="Name" name="Name" placeholder="Disabled input" value="@Model.Name">
+                        </div>
+                    </div>
+                    <div class="row g-2 align-items-center" style="margin-left:20px;margin-bottom:20px">
+                        <div class="col-2">
+                            <label class="form-label">信箱</label>
+                        </div>
+                        <div class="col-auto" style="width:80%">
+                            <input type="text" class="form-control" id="Email" name="Email" placeholder="Disabled input" value="@Model.Email" />
+                        </div>
+                    </div>
+                    <div class="row g-2 align-items-center" style="margin-left:20px;margin-bottom:20px">
+                        <div class="col-2">
+                            <label class="form-label">地區</label>
+                        </div>
+                        <div class="col-auto" style="width:80%">
+                            <input type="text" class="form-control" id="Location" name="Location" placeholder="Disabled input" value="@Model.Location">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
+                    <button type="submit" class="btn btn-primary">送出</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Moda3 -->
+<div class="modal fade" id="exampleModa3" tabindex="-1" aria-labelledby="exampleModalLabe3" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">預約資訊</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form method="post" action="/Home/RentalCar">
+                <div class="modal-body">
+                    <img src="../Upload/img/YARIS.png" class="card-img-top" alt="...">
+                    <div class="row g-2 align-items-center" style="margin-left:20px;margin-bottom:20px">
+                        <div class="col-2">
+                            <label class="form-label">車型</label>
+                        </div>
+                        <div class="col-auto" style="width:80%">
+                            <input type="text" class="form-control" id="CarName" name="CarName" placeholder="Disabled input" value="YARIS">
+                        </div>
+                    </div>
+                    <div class="row g-2 align-items-center" style="margin-left:20px;margin-bottom:20px">
+                        <div class="col-2">
+                            <label for="exampleInputEmail1" class="form-label">姓名</label>
+                        </div>
+                        <div class="col-auto" style="width:80%">
+                            <input type="text" class="form-control" id="Name" name="Name" placeholder="Disabled input" value="@Model.Name">
+                        </div>
+                    </div>
+                    <div class="row g-2 align-items-center" style="margin-left:20px;margin-bottom:20px">
+                        <div class="col-2">
+                            <label class="form-label">信箱</label>
+                        </div>
+                        <div class="col-auto" style="width:80%">
+                            <input type="text" class="form-control" id="Email" name="Email" placeholder="Disabled input" value="@Model.Email" />
+                        </div>
+                    </div>
+                    <div class="row g-2 align-items-center" style="margin-left:20px;margin-bottom:20px">
+                        <div class="col-2">
+                            <label class="form-label">地區</label>
+                        </div>
+                        <div class="col-auto" style="width:80%">
+                            <input type="text" class="form-control" id="Location" name="Location" placeholder="Disabled input" value="@Model.Location">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
+                    <button type="submit" class="btn btn-primary">送出</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Moda4 -->
+<div class="modal fade" id="exampleModa4" tabindex="-1" aria-labelledby="exampleModalLabe4" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">預約資訊</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form method="post" action="/Home/RentalCar">
+                <div class="modal-body">
+                    <img src="../Upload/img/ALTISSafety.jpg" class="card-img-top" alt="...">
+                    <div class="row g-2 align-items-center" style="margin-left:20px;margin-bottom:20px">
+                        <div class="col-2">
+                            <label class="form-label">車型</label>
+                        </div>
+                        <div class="col-auto" style="width:80%">
+                            <input type="text" class="form-control" id="CarName" name="CarName" placeholder="Disabled input" value="ALTIS Safety+">
+                        </div>
+                    </div>
+                    <div class="row g-2 align-items-center" style="margin-left:20px;margin-bottom:20px">
+                        <div class="col-2">
+                            <label for="exampleInputEmail1" class="form-label">姓名</label>
+                        </div>
+                        <div class="col-auto" style="width:80%">
+                            <input type="text" class="form-control" id="Name" name="Name" placeholder="Disabled input" value="@Model.Name">
+                        </div>
+                    </div>
+                    <div class="row g-2 align-items-center" style="margin-left:20px;margin-bottom:20px">
+                        <div class="col-2">
+                            <label class="form-label">信箱</label>
+                        </div>
+                        <div class="col-auto" style="width:80%">
+                            <input type="text" class="form-control" id="Email" name="Email" placeholder="Disabled input" value="@Model.Email" />
+                        </div>
+                    </div>
+                    <div class="row g-2 align-items-center" style="margin-left:20px;margin-bottom:20px">
+                        <div class="col-2">
+                            <label class="form-label">地區</label>
+                        </div>
+                        <div class="col-auto" style="width:80%">
+                            <input type="text" class="form-control" id="Location" name="Location" placeholder="Disabled input" value="@Model.Location">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
+                    <button type="submit" class="btn btn-primary">送出</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Moda5 -->
+<div class="modal fade" id="exampleModa5" tabindex="-1" aria-labelledby="exampleModalLabe5" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">預約資訊</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form method="post" action="/Home/RentalCar">
+                <div class="modal-body">
+                    <img src="../Upload/img/COROLLA CROSS.jpg" class="card-img-top" alt="...">
+                    <div class="row g-2 align-items-center" style="margin-left:20px;margin-bottom:20px">
+                        <div class="col-2">
+                            <label class="form-label">車型</label>
+                        </div>
+                        <div class="col-auto" style="width:80%">
+                            <input type="text" class="form-control" id="CarName" name="CarName" placeholder="Disabled input" value="COROLLA CROSS">
+                        </div>
+                    </div>
+                    <div class="row g-2 align-items-center" style="margin-left:20px;margin-bottom:20px">
+                        <div class="col-2">
+                            <label for="exampleInputEmail1" class="form-label">姓名</label>
+                        </div>
+                        <div class="col-auto" style="width:80%">
+                            <input type="text" class="form-control" id="Name" name="Name" placeholder="Disabled input" value="@Model.Name">
+                        </div>
+                    </div>
+                    <div class="row g-2 align-items-center" style="margin-left:20px;margin-bottom:20px">
+                        <div class="col-2">
+                            <label class="form-label">信箱</label>
+                        </div>
+                        <div class="col-auto" style="width:80%">
+                            <input type="text" class="form-control" id="Email" name="Email" placeholder="Disabled input" value="@Model.Email" />
+                        </div>
+                    </div>
+                    <div class="row g-2 align-items-center" style="margin-left:20px;margin-bottom:20px">
+                        <div class="col-2">
+                            <label class="form-label">地區</label>
+                        </div>
+                        <div class="col-auto" style="width:80%">
+                            <input type="text" class="form-control" id="Location" name="Location" placeholder="Disabled input" value="@Model.Location">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
+                    <button type="submit" class="btn btn-primary">送出</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Moda6 -->
+<div class="modal fade" id="exampleModa6" tabindex="-1" aria-labelledby="exampleModalLabe6" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">預約資訊</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form method="post" action="/Home/RentalCar">
+                <div class="modal-body">
+                    <img src="../Upload/img/BZ4X.jpg" class="card-img-top" alt="...">
+                    <div class="row g-2 align-items-center" style="margin-left:20px;margin-bottom:20px">
+                        <div class="col-2">
+                            <label class="form-label">車型</label>
+                        </div>
+                        <div class="col-auto" style="width:80%">
+                            <input type="text" class="form-control" id="CarName" name="CarName" placeholder="Disabled input" value="bZ4X">
+                        </div>
+                    </div>
+                    <div class="row g-2 align-items-center" style="margin-left:20px;margin-bottom:20px">
+                        <div class="col-2">
+                            <label for="exampleInputEmail1" class="form-label">姓名</label>
+                        </div>
+                        <div class="col-auto" style="width:80%">
+                            <input type="text" class="form-control" id="Name" name="Name" placeholder="Disabled input" value="@Model.Name">
+                        </div>
+                    </div>
+                    <div class="row g-2 align-items-center" style="margin-left:20px;margin-bottom:20px">
+                        <div class="col-2">
+                            <label class="form-label">信箱</label>
+                        </div>
+                        <div class="col-auto" style="width:80%">
+                            <input type="text" class="form-control" id="Email" name="Email" placeholder="Disabled input" value="@Model.Email" />
+                        </div>
+                    </div>
+                    <div class="row g-2 align-items-center" style="margin-left:20px;margin-bottom:20px">
+                        <div class="col-2">
+                            <label class="form-label">地區</label>
+                        </div>
+                        <div class="col-auto" style="width:80%">
+                            <input type="text" class="form-control" id="Location" name="Location" placeholder="Disabled input" value="@Model.Location">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
+                    <button type="submit" class="btn btn-primary">送出</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

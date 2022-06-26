@@ -1,0 +1,47 @@
+﻿@model WebApplication1.ViewModels.MembersLoginViewModel
+
+@{
+    ViewBag.Title = "登入";
+}
+@*匯入驗證用所須的JavaScript*@
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+@*標題*@
+<div class="page-header">
+    <h1>登入</h1>
+</div>
+<div class="form-horizontal">
+    @*建立登入所須的表單*@
+    @using (Html.BeginForm())
+    {
+        @*顯示彙總的表單驗證的錯誤訊息*@
+        <div class="alert alert-warning" role="alert">
+            @Html.ValidationSummary()
+        </div>
+        @*產生登入帳號密碼表單內容*@
+        <div class="mb-3">
+            @Html.LabelFor(model => model.Account, new { @class = "col-xs-4 col-md-1 form-label" })
+            <div class="col-xs-8 col-md-11">
+                @Html.TextBoxFor(model => model.Account, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Account, null, new { @class = "badge bg-danger" })
+            </div>
+        </div>
+        <div class="mb-3">
+            @Html.LabelFor(model => model.Password, new { @class = "col-xs-4 col-md-1 form-label" })
+            <div class="col-xs-8 col-md-11">
+                @Html.PasswordFor(model => model.Password, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Password, null, new { @class = "badge bg-danger" })
+            </div>
+        </div>
+        <div class="mb-3">
+            <div class="col-md-offset-1 col-md-10">
+                <input class="btn btn-primary" type="submit" value="登入" />
+                    <a class="btn btn-outline-secondary" href="/Members/Register">註冊</a>
+            </div>
+        </div>
+ 
+    }
+</div>
